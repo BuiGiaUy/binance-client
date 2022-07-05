@@ -1,0 +1,41 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;500;600;800&family=Roboto:wght@300;500&display=swap');
+@import '~antd/dist/antd.css';
+
+:root {
+    --primary: rgb(252, 213, 53);
+    --hover: #f0b90b;
+    --white: #eaecef;
+    --black: rgb(24, 26, 32);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 63.5%;
+    line-height: 1.15;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    text-decoration: none;
+}
