@@ -1,12 +1,12 @@
 //Layouts
-import HeaderOnly from '.././components/Layout/HeaderOnly';
+import HeaderOnly from '../components/Layout/HeaderOnly';
 
 //Pages
-import Home from '../pages/Home';
-import Markets from '../pages/Markets';
-import Login from '../pages/Login';
-import Search from '../pages/Search';
-import Register from '../pages/Register';
+import Home from './../pages/Home';
+import Markets from './../pages/Markets';
+import Login from './../pages/Login';
+import Search from './../pages/Search';
+import Register from './../pages/Register';
 
 //Public Routes
 const publicRoutes = [

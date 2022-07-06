@@ -1,0 +1,82 @@
+.lists {
+    width: 800px;
+    padding-top: 10px;
+    margin: 0;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 8%);
+
+    background-color: #1e2329;
+    min-height: 100px;
+    padding: 16px;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//earnItem
+
+.earnItem {
+    width: 357.2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    line-height: 15px;
+
+    background-color: #1e2329;
+
+    &:hover {
+        background-color: #2b3139;
+        border-radius: 8px;
+    }
+    &:hover svg {
+        left: 0;
+        opacity: 2;
+        color: #f0b90b;
+    }
+}
+
+.content {
+    margin: 0 16px;
+    width: 254px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.earnItem-title {
+    margin: 0;
+    min-width: 0;
+    color: #eaecef;
+    font-size: 15px;
+}
+
+.earnItem-content {
+    margin: 0;
+    min-width: 0;
+    font-size: 11px;
+    color: #848e9c;
+    margin-top: 4px;
+    text-align: left;
+}
+
+.icon-arrow {
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.icon-left {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    padding: 7px;
+    color: #f0b90b;
+}
+
+.earnItem {
+    color: #f0b90b;
+}
