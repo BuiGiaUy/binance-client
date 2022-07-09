@@ -7,11 +7,16 @@ import HideNetItem from './HideNetItem';
 const cx = classNames.bind(styles);
 type Props = {
     children: JSX.Element;
-    items: any[];
+    items: {
+        leftIcon: JSX.Element;
+        title: string;
+        content: string;
+        href: string;
+    }[];
 };
 
 function HideNet({ children, items = [] }: Props) {
-    const renderItems = (): any => {
+    const renderItems = () => {
         return items.map((item, index) => <HideNetItem key={index} data={item} />);
     };
 

@@ -2,12 +2,8 @@ import styles from './Wrapper.module.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
-type wrap = {
-    children: any;
-    className?: string;
-};
 
-function Wrapper({ children }: wrap) {
+function Wrapper({ children }: any): JSX.Element {
     return <div className={cx('wrapper')}>{children}</div>;
 }
 

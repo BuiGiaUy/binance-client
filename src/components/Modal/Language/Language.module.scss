@@ -1,0 +1,100 @@
+div {
+    display: block;
+}
+
+.modal > div {
+    background-color: rgb(30, 35, 41);
+    color: rgb(234, 236, 239);
+    box-shadow: rgb(0 0 0 / 8%) 0px 0px 20px;
+    max-width: 100vw;
+    max-height: 100vh;
+    position: relative;
+}
+
+.modal {
+    display: flex;
+    padding: 0px 0px 24px;
+    width: 840px;
+    flex-direction: column;
+}
+
+.close {
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    color: rgb(241, 238, 32);
+    background-color: rgb(30, 35, 41);
+    top: 110px;
+    right: 274px;
+}
+.close-svg {
+    width: 1em;
+    height: 1em;
+    font-size: 20px;
+}
+
+.header {
+    display: flex;
+    border-bottom: 1px solid rgb(39, 42, 46);
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.header-item-a {
+    margin: 0px 24px 0px 0px;
+    min-width: 0px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(240, 185, 11);
+}
+
+.header-item-b {
+    margin: 0px 24px 0px 0px;
+    min-width: 0px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+}
+
+.content {
+    display: flex;
+    flex: 1 1 0%;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.content-header {
+    padding-left: 30px;
+    padding-right: 24px;
+    display: block;
+    font-size: 16px;
+    padding-top: 24px;
+    font-weight: 500;
+}
+
+.content-lists {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    padding-left: 30px;
+    padding-right: 12px;
+    margin-top: 16px;
+    margin-right: 16px;
+    font-size: 14px;
+    display: flex;
+    height: 48px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: transparent;
+    color: rgb(234, 236, 239);
+    cursor: pointer;
+    width: 23%;
+}

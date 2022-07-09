@@ -3,16 +3,15 @@ import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import styles from './Download.module.scss';
 import Wrapper from '../Wrapper';
-import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
-function Download({ children }) {
+function Download({ children }: any): JSX.Element {
     return (
         <Tippy
             interactive
             placement="bottom-start"
-            render={(attrs) => (
+            render={({ attrs }: any) => (
                 <div className={cx('wrapper')} tabIndex="-1" {...attrs}>
                     <Wrapper className={cx('wrapper')}>
                         <div className={cx('item')}>
@@ -28,9 +27,7 @@ function Download({ children }) {
                             </div>
                             <div className={cx('content')}>Quét để Tải xuống Ứng dụng cho iOS và Android</div>
                         </div>
-                        <Button primary className={cx('button')}>
-                            Thêm lựa chọn tải xuống
-                        </Button>
+                        <button className={cx('button')}>Thêm lựa chọn tải xuống</button>
                     </Wrapper>
                 </div>
             )}

@@ -35,4 +35,18 @@
 
 .button {
     font-size: 12px;
+
+    border-radius: 5px;
+    color: #1e2329;
+    background-color: #fcd535;
+    justify-content: center;
+
+    &:hover {
+        border-radius: 5px;
+
+        box-shadow: none;
+        background-image: none;
+        background-color: rgb(252, 213, 53);
+        opacity: 0.9;
+    }
 }

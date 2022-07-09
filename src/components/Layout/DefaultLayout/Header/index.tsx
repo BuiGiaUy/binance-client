@@ -19,15 +19,18 @@ import {
     faUserGraduate,
     faWifi,
 } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames/bind';
+import { Button } from 'antd';
+import { useState } from 'react';
 
 import HideNet from '#/components/Popper/HideNet';
 import Buying from '#/components/Popper/Buying';
 import Exchange from '#/components/Popper/Exchange';
 import Earn from '#/components/Popper/Earn';
+import Download from '#/components/Popper/Download';
 
-import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
-import { Button } from 'antd';
+import Language from '#/components/Modal/Language';
 
 const cx = classNames.bind(styles);
 
@@ -269,38 +272,38 @@ const FINANCE_LISTS = [
 ];
 
 //Modal
-// const LANGUAGE_LISTS = [
-//     {
-//         content: 'Tiếng Việt',
-//     },
-//     {
-//         content: 'Tiếng Anh',
-//     },
-//     {
-//         content: 'Tiếng Tàu',
-//     },
-//     {
-//         content: 'Tiếng Cam',
-//     },
-//     {
-//         content: 'Tiếng Tây',
-//     },
-//     {
-//         content: 'Tiếng Nga',
-//     },
-//     {
-//         content: 'Tiếng Mỹ',
-//     },
-//     {
-//         content: 'Tiếng Hàn',
-//     },
-//     {
-//         content: 'Tiếng Nhật',
-//     },
-// ];
+const LANGUAGE_LISTS = [
+    {
+        content: 'Tiếng Việt',
+    },
+    {
+        content: 'Tiếng Anh',
+    },
+    {
+        content: 'Tiếng Tàu',
+    },
+    {
+        content: 'Tiếng Cam',
+    },
+    {
+        content: 'Tiếng Tây',
+    },
+    {
+        content: 'Tiếng Nga',
+    },
+    {
+        content: 'Tiếng Mỹ',
+    },
+    {
+        content: 'Tiếng Hàn',
+    },
+    {
+        content: 'Tiếng Nhật',
+    },
+];
 
 function Header() {
-    // const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState<boolean>(false);
 
     return (
         <header className={cx('header')}>
@@ -383,23 +386,25 @@ function Header() {
             </div>
 
             <div className={cx('tools')}>
-                <div className={cx('content-item')}>Tải xuống</div>
+                <Download>
+                    <div className={cx('content-item')}>Tải xuống</div>
+                </Download>
                 <div className={cx('tools-list')}>
                     <button
                         className={cx('tools-item')}
-                        // onClick={() => {
-                        //     setOpenModal(true);
-                        // }}
+                        onClick={() => {
+                            setOpenModal(true);
+                        }}
                     >
                         Tiếng Việt
                     </button>
-                    {/* {openModal && <Language closeModal={setOpenModal} items={LANGUAGE_LISTS} />} */}
+                    {openModal && <Language closeModal={setOpenModal} items={LANGUAGE_LISTS} />}
                     <div className={cx('tools-item-space')}></div>
                     <div
                         className={cx('tools-item')}
-                        // onClick={() => {
-                        //     setOpenModal(true);
-                        // }}
+                        onClick={() => {
+                            setOpenModal(true);
+                        }}
                     >
                         USD
                     </div>

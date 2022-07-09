@@ -7,11 +7,16 @@ import BuyingItem from './BuyingItem';
 const cx = classNames.bind(styles);
 type Props = {
     children: JSX.Element;
-    items: any[];
+    items: {
+        leftIcon: JSX.Element;
+        title: string;
+        content: string;
+        to: string;
+    }[];
 };
 
 function Buying({ children, items = [] }: Props) {
-    const renderItems = (): any => {
+    const renderItems = () => {
         return items.map((item, index) => <BuyingItem key={index} data={item} />);
     };
 
