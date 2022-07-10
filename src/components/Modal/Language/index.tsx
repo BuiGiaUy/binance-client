@@ -6,22 +6,14 @@ import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Language.module.scss';
 import Wrapper from '../Wrapper';
-import LanguageItem from './LanguageItem';
 
 const cx = classNames.bind(styles);
 
 type IProps = {
     closeModal: any;
-    items: {
-        content: string;
-    }[];
 };
 
-function Language({ closeModal, items = [] }: IProps) {
-    const renderItems = () => {
-        return items.map((item, index) => <LanguageItem key={index} data={item} />);
-    };
-
+function Language({ closeModal }: IProps) {
     return (
         <Wrapper>
             <div className={cx('modal')}>
@@ -34,7 +26,6 @@ function Language({ closeModal, items = [] }: IProps) {
                 </div>
                 <div className={cx('content')}>
                     <div className={cx('content-header')}>Chọn ngôn ngữ và vị trí</div>
-                    <div>{renderItems()}</div>
                     <div className={cx('content-lists')}>
                         <Link to={'/tien'} className={cx('content-item')}>
                             Tiếng Việt

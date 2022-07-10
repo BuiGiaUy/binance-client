@@ -272,35 +272,6 @@ const FINANCE_LISTS = [
 ];
 
 //Modal
-const LANGUAGE_LISTS = [
-    {
-        content: 'Tiếng Việt',
-    },
-    {
-        content: 'Tiếng Anh',
-    },
-    {
-        content: 'Tiếng Tàu',
-    },
-    {
-        content: 'Tiếng Cam',
-    },
-    {
-        content: 'Tiếng Tây',
-    },
-    {
-        content: 'Tiếng Nga',
-    },
-    {
-        content: 'Tiếng Mỹ',
-    },
-    {
-        content: 'Tiếng Hàn',
-    },
-    {
-        content: 'Tiếng Nhật',
-    },
-];
 
 function Header() {
     const [openModal, setOpenModal] = useState<boolean>(false);
@@ -398,7 +369,7 @@ function Header() {
                     >
                         Tiếng Việt
                     </button>
-                    {openModal && <Language closeModal={setOpenModal} items={LANGUAGE_LISTS} />}
+                    {openModal && <Language closeModal={setOpenModal} />}
                     <div className={cx('tools-item-space')}></div>
                     <div
                         className={cx('tools-item')}
