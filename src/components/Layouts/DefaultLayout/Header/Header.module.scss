@@ -107,7 +107,7 @@
 // Rỗng
 .space {
     display: flex;
-    width: 200px;
+    width: 220px;
 }
 
 // Đăng nhập
@@ -126,9 +126,6 @@
     &:hover {
         color: rgb(240, 185, 11);
         background-color: #181a20;
-    }
-    & span {
-        padding-top: 2px;
     }
 }
 
@@ -151,9 +148,6 @@
         background-color: rgb(252, 213, 53);
         opacity: 0.9;
     }
-    & span {
-        padding-top: 2px;
-    }
 }
 
 //Trình thông dụng
@@ -163,7 +157,7 @@
 }
 
 .tools-list {
-    padding: 0 8px;
+    padding: 0 6px;
     display: flex;
     align-items: center;
 }
@@ -187,7 +181,6 @@
 }
 .tools-sun {
     margin: auto;
-    padding-bottom: 3px;
     cursor: pointer;
 
     &:hover {
