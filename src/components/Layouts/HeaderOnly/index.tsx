@@ -1,13 +1,17 @@
 import HeaderNotNavBar from './HeaderNotNavBar';
+import styles from './HeaderNotNavBar/HeaderNotNavBar.module.scss';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }: any) {
     return (
-        <div>
-            <HeaderNotNavBar />
-            <div className="container">
-                <div className="content">{children}</div>
+        <>
+            <div className={cx('wrap')}>
+                <HeaderNotNavBar />
+                {children}
             </div>
-        </div>
+        </>
     );
 }
 
