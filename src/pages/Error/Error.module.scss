@@ -1,0 +1,35 @@
+.container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: #fafafa;
+}
+.img {
+    width: 340px;
+    > img {
+        width: 100%;
+        display: block;
+    }
+}
+.content {
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+}
+.content-title {
+    font-size: 24px;
+    line-height: 28px;
+    color: #1e2026;
+    font-weight: 500;
+}
+.content-item {
+    margin-left: 16px;
+    > a {
+        color: #d0980b;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

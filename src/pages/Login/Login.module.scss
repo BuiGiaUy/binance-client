@@ -345,3 +345,15 @@ form {
     padding-right: 16px;
     cursor: pointer;
 }
+
+.input-password {
+    background-color: rgb(24, 26, 32);
+    border: none;
+    > span {
+        > span {
+            > svg {
+                color: #b7bdc6;
+            }
+        }
+    }
+}
