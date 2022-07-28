@@ -357,3 +357,53 @@ form {
         }
     }
 }
+
+.modal-wrapper {
+    div {
+        background-color: rgb(30, 35, 41);
+    }
+    > div {
+        padding-bottom: 0;
+        border-radius: 5px;
+    }
+}
+.modal-svg {
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+    margin: auto;
+}
+.modal-content {
+    margin: 24px 0px 16px;
+    min-width: 0px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: rgb(234, 236, 239);
+    > div {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+.modal-btn {
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    width: 100%;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 10px;
+    background-color: rgb(252, 213, 53);
+    color: rgb(24, 26, 32);
+    &:hover {
+        background-color: rgb(240, 185, 11);
+
+        opacity: 0.9;
+        color: rgb(24, 26, 32);
+        border: none;
+    }
+}

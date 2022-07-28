@@ -1,5 +1,5 @@
 import { AppleFilled, GoogleOutlined } from '@ant-design/icons';
-import { Button, Col, Input, Row } from 'antd';
+import { Button, Col, Input, Modal, Row } from 'antd';
 import classNames from 'classnames/bind';
 import { useState, useContext } from 'react';
 import styles from './Login.module.scss';
@@ -32,10 +32,20 @@ function Login() {
             if (loginData.success) {
                 history('/dashboard');
             } else {
+                setIsModalVisible(true);
             }
         } catch (error) {
             console.log(error);
         }
+    };
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
     };
 
     let body;
@@ -91,6 +101,63 @@ function Login() {
                             Đăng Nhập
                         </Button>
                     </form>
+                    <Modal
+                        closable={false}
+                        width="360px"
+                        visible={isModalVisible}
+                        onOk={handleOk}
+                        onCancel={handleCancel}
+                        footer={null}
+                        wrapClassName={cx('modal-wrapper')}
+                    >
+                        <div className={cx('modal-svg')}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none" class="css-zp2i6j">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M48 88c22.091 0 40-17.909 40-40S70.091 8 48 8 8 25.909 8 48s17.909 40 40 40zM33 37.198l10.607 10.497L33 58.19l4.243 4.198 10.606-10.496 10.607 10.496 4.242-4.198-10.606-10.496 10.607-10.497L58.456 33 47.849 43.496 37.243 33 33 37.198z"
+                                    fill="url(#general-error_svg__paint0)"
+                                ></path>
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M48 19c-16.016 0-29 12.984-29 29s12.984 29 29 29 29-12.984 29-29-12.984-29-29-29zm-4.393 28.695L33 37.199 37.243 33l10.606 10.496L58.456 33l4.242 4.199-10.606 10.496L62.699 58.19l-4.243 4.198-10.607-10.496-10.606 10.496L33 58.191l10.607-10.496z"
+                                    fill="url(#general-error_svg__paint1)"
+                                ></path>
+                                <defs>
+                                    <linearGradient
+                                        id="general-error_svg__paint0"
+                                        x1="8"
+                                        y1="48"
+                                        x2="88"
+                                        y2="48"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop stop-color="#F84960" stop-opacity="0"></stop>
+                                        <stop offset="1" stop-color="#F84960"></stop>
+                                    </linearGradient>
+                                    <linearGradient
+                                        id="general-error_svg__paint1"
+                                        x1="77"
+                                        y1="48"
+                                        x2="19"
+                                        y2="48"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop stop-color="#F84960"></stop>
+                                        <stop offset="1" stop-color="#D9304E"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div data-bn-type="text" className={cx('modal-content')}>
+                            <div data-bn-type="text">Bạn đã nhập sai mật khẩu. Bạn còn 4 lần nữa.</div>
+                        </div>
+
+                        <Button onClick={handleOk} className={cx('modal-btn')}>
+                            OK
+                        </Button>
+                    </Modal>
 
                     <div className={cx('btn')}>
                         <div className={cx('btn-title')}>
