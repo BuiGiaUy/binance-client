@@ -1,5 +1,5 @@
 import { AppleFilled, GoogleOutlined } from '@ant-design/icons';
-import { Button, Col, Input, Modal, Row } from 'antd';
+import { Button, Col, Input, Modal, Row, Form } from 'antd';
 import classNames from 'classnames/bind';
 import { useState, useContext } from 'react';
 import styles from './Login.module.scss';
@@ -14,21 +14,20 @@ function Login() {
 
     // Router
     const history = useNavigate();
+
     // loginForm
     const [loginForm, setLoginForm] = useState({
-        username: '',
+        email: '',
         password: '',
     });
+    const { email, password } = loginForm;
 
-    const { username, password } = loginForm;
-
-    const onChangeLoginForm = (event) => setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
-
-    const login = async (event) => {
-        event.preventDefault();
-
+    const onChangeLoginForm = (event: any) => setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
+    // handleFormSubmit
+    const handleFormSubmit = async () => {
         try {
             const loginData = await loginUser(loginForm);
+
             if (loginData.success) {
                 history('/dashboard');
             } else {
@@ -38,6 +37,22 @@ function Login() {
             console.log(error);
         }
     };
+    // onSubmit
+    // const login = async (event) => {
+    //     event.preventDefault();
+
+    //     try {
+    //         const loginData = await loginUser(loginForm);
+    //         if (loginData.success) {
+    //             history('/dashboard');
+    //         } else {
+    //             setIsModalVisible(true);
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const handleOk = () => {
@@ -63,44 +78,49 @@ function Login() {
                         </div>
                     </div>
 
-                    <form onSubmit={login}>
-                        <div className={cx('input-wrapper')}>
-                            <div className={cx('input-title')}>Email</div>
-                            <div className={cx('input-content')}>
-                                <div className=" css-1br1azt">
-                                    <input
-                                        data-bn-type="input"
-                                        name="username"
-                                        value={username}
-                                        onChange={onChangeLoginForm}
-                                    />
-                                    <div className="bn-input-suffix css-vurnku">
-                                        <div className="css-1gkkq18"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={cx('input-message')}></div>
-                        </div>
+                    <Form onFinish={handleFormSubmit}>
+                        <div className={cx('title-input')}>Email</div>
 
-                        <div className={cx('input-wrapper')}>
-                            <div className={cx('input-title')}>Mật khẩu</div>
-                            <div className={cx('input-content')}>
-                                <div className=" css-1br1azt">
-                                    <Input.Password
-                                        className={cx('input-password')}
-                                        name="password"
-                                        type="password"
-                                        value={password}
-                                        onChange={onChangeLoginForm}
-                                    />
-                                </div>
-                            </div>
-                            <div className={cx('input-message')}></div>
-                        </div>
+                        <Form.Item
+                            className={cx('input-email')}
+                            name="email"
+                            rules={[
+                                {
+                                    type: 'email',
+                                    message: 'Hãy nhập một địa chỉ email chính xác',
+                                },
+                                {
+                                    required: true,
+                                    message: 'Hãy nhập email của bạn',
+                                },
+                            ]}
+                        >
+                            <Input className={cx('input')} name="email" value={email} onChange={onChangeLoginForm} />
+                        </Form.Item>
+
+                        <div className={cx('input-title')}>Mật khẩu</div>
+                        <Form.Item
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Hãy nhập mật khẩu của bạn',
+                                },
+                            ]}
+                            hasFeedback
+                        >
+                            <Input.Password
+                                className={cx('input')}
+                                name="password"
+                                value={password}
+                                onChange={onChangeLoginForm}
+                            />
+                        </Form.Item>
+
                         <Button className={cx('form-btn')} htmlType="submit">
                             Đăng Nhập
                         </Button>
-                    </form>
+                    </Form>
                     <Modal
                         closable={false}
                         width="360px"
@@ -111,7 +131,7 @@ function Login() {
                         wrapClassName={cx('modal-wrapper')}
                     >
                         <div className={cx('modal-svg')}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none" class="css-zp2i6j">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
                                 <path
                                     fill-rule="evenodd"
                                     clip-rule="evenodd"

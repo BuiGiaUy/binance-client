@@ -16,7 +16,7 @@ function Download({ children }: any): JSX.Element {
                     <Wrapper className={cx('wrapper')}>
                         <div className={cx('item')}>
                             <div className={cx('image')}>
-                                <svg shape-rendering="crispEdges" height="136" width="136" viewBox="0 0 37 37">
+                                <svg height="136" width="136" viewBox="0 0 37 37">
                                     <path fill="#FFFFFF" d="M0,0 h37v37H0z"></path>
                                     <path
                                         fill="#000000"

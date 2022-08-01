@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import DefaultLayout from './components/Layouts/DefaultLayout';
+import LayoutAuth from './components/Layouts/DefaultLayout/LayoutAuth';
+
 import { AuthProvider } from './auth';
 import PrivateRoute from './routes/routing/PrivateRoute';
 import Dashboard from './pages/Dashboard';
@@ -32,7 +34,14 @@ function App() {
                             );
                         })}
                         <Route path="/dashboard" element={<PrivateRoute />}>
-                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route
+                                path="/dashboard"
+                                element={
+                                    <LayoutAuth>
+                                        <Dashboard />
+                                    </LayoutAuth>
+                                }
+                            />
                         </Route>
                     </Routes>
                 </div>

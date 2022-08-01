@@ -157,7 +157,7 @@ form {
             padding-left: 12px;
             padding-right: 12px;
             width: 100%;
-            height: 100%;
+            height: 38px;
             padding: 0px;
             outline: none;
             border: none;
@@ -204,6 +204,22 @@ form {
         background-image: none;
         background-color: rgb(252, 213, 53);
         opacity: 0.9;
+    }
+}
+
+.input {
+    width: 100%;
+    height: 48px;
+    padding: 0px 10px;
+    outline: none;
+    border: none;
+    opacity: 1;
+    line-height: 1.15;
+    border: 1px solid rgb(71, 77, 87);
+    svg {
+        font-weight: 1000;
+        color: #b7bdc6;
+        font-size: 20px;
     }
 }
 // btn
@@ -405,5 +421,21 @@ form {
         opacity: 0.9;
         color: rgb(24, 26, 32);
         border: none;
+    }
+}
+// input
+.input {
+    width: 100%;
+    height: 48px;
+    padding: 0px 10px;
+    outline: none;
+    border: none;
+    opacity: 1;
+    line-height: 1.15;
+    border: 1px solid rgb(71, 77, 87);
+    svg {
+        font-weight: 1000;
+        color: #b7bdc6;
+        font-size: 20px;
     }
 }
