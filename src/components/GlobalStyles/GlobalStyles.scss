@@ -16,6 +16,8 @@
 }
 
 html {
+    --antd-wave-shadow-color: #f0b90b;
+
     font-size: 63.5%;
     line-height: 1.15;
     text-size-adjust: 100%;
@@ -51,4 +53,90 @@ form {
     text-align: center;
     background: rgba(0, 0, 0, 0.05);
     border-radius: 4px;
+}
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input,
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+    background-color: rgb(24, 26, 32);
+    border-color: #ff4d4f;
+}
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
+    color: rgb(234, 236, 239);
+    border: 1px solid rgb(71, 77, 87);
+    &:hover {
+        background-color: rgb(24, 26, 32);
+    }
+}
+.ant-input {
+    background-color: rgb(24, 26, 32);
+    color: rgb(234, 236, 239);
+    border: 1px solid rgb(71, 77, 87);
+    &:hover {
+        background-color: rgb(24, 26, 32);
+        border-color: rgb(240, 185, 11);
+    }
+}
+.ant-input-affix-wrapper {
+    background-color: rgb(24, 26, 32);
+}
+
+span.ant-input-affix-wrapper.ant-input-password.Person_input__j4zFN.ant-input-affix-wrapper-status-error.ant-input-affix-wrapper-has-feedback {
+    background-color: rgb(24, 26, 32);
+}
+span.ant-input-affix-wrapper.ant-input-password.Login_input__Tb\+-p.ant-input-affix-wrapper-status-success.ant-input-affix-wrapper-has-feedback {
+    border-color: rgb(240, 185, 11);
+}
+
+span.ant-input-affix-wrapper.ant-input-password.Login_input__Tb\+-p.ant-input-affix-wrapper-status-error.ant-input-affix-wrapper-has-feedback {
+    background-color: rgb(24, 26, 32);
+}
+// layout
+.ant-layout-header {
+    height: 64px;
+    padding: 0px 0px;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 0;
+    background: #001529;
+}
+.ant-layout {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 0;
+    background: none;
+}
+.ant-layout-footer {
+    padding: 24px 50px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    background: rgb(24, 26, 32);
+}
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+    color: #eaecef;
+
+    background: rgb(24, 26, 32);
+}
+.ant-layout-sider-children {
+    background: rgb(24, 26, 32);
+
+    width: 240px;
+    border-right: 1px solid #eaecef;
+}
+
+button.ant-btn.ant-btn-default.Sider_btn__GslDQ {
+    background: rgb(24, 26, 32);
+    color: #eaecef;
+    border: none;
+}
+a.ant-btn.ant-btn-default.Sider_btn__GslDQ {
+    border: none;
+    background-color: rgb(24, 26, 32);
+    color: #eaecef;
+    border-radius: 0;
+    line-height: 2.7;
+    &:hover {
+        background-color: rgb(43, 49, 57);
+        color: #eaecef;
+    }
 }

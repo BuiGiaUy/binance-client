@@ -4,7 +4,7 @@ import { Button } from 'antd';
 
 const cx = classNames.bind(styles);
 
-function Footer() {
+function DefaultFooter() {
     return (
         <footer className={cx('wrapper')}>
             <div className={cx('lists')}>
@@ -209,4 +209,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default DefaultFooter;

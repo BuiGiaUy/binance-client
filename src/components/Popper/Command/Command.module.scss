@@ -1,0 +1,37 @@
+.lists {
+    padding-top: 10px;
+    margin: 0;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 8%);
+
+    background-color: #1e2329;
+    min-height: 100px;
+}
+.commandItem {
+    display: flex;
+    flex-direction: row;
+
+    padding: 16px;
+
+    background-color: #1e2329;
+
+    &:hover {
+        background-color: #2b3139;
+    }
+    &:hover svg {
+        left: 0;
+        opacity: 2;
+        color: #f0b90b;
+    }
+}
+.leftIcon {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    color: rgb(132, 142, 156);
+}
+.commandItem-title {
+    margin: 0;
+    min-width: 0;
+    color: #eaecef;
+    font-size: 15px;
+}

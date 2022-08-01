@@ -1,0 +1,32 @@
+.logo {
+}
+.li {
+    button {
+        &:hover {
+            background-color: rgb(43, 49, 57);
+        }
+    }
+}
+.btn {
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    word-break: break-word;
+    height: 100%;
+    color: rgb(234, 236, 239);
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: rgb(43, 49, 57);
+    }
+    svg {
+        margin: 0px 8px 0px 12px;
+        min-width: 0px;
+        color: rgb(132, 142, 156);
+        font-size: 24px;
+        fill: rgb(132, 142, 156);
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+    }
+}

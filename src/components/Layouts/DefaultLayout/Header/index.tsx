@@ -28,9 +28,12 @@ import Buying from '#/components/Popper/Buying';
 import Exchange from '#/components/Popper/Exchange';
 import Earn from '#/components/Popper/Earn';
 import Download from '#/components/Popper/Download';
-
+import { useContext } from 'react';
+import { AuthContext } from '#/auth';
 import styles from './Header.module.scss';
 import Language from '#/components/Modal/Language';
+import Command from '#/components/Popper/Command';
+import Avartar from '#/components/Popper/Avartar';
 
 const cx = classNames.bind(styles);
 
@@ -271,10 +274,181 @@ const FINANCE_LISTS = [
     },
 ];
 
+const COMMAND_LISTS = [
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lệnh Spot',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lệnh margin',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lệnh P2P',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử kiếm tiền',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử Mua/Bán',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử vay tiền',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử Chuyển đổi',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử Launchpad',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử Thanh toán',
+        to: '/futures',
+    },
+];
+const WALLET_LISTS = [
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Tổng quan ví',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: '(Nạp & Rút)',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Margin',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Futures',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Earn',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Nạp tiền vào ví',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Lịch sử thay đổi số dư',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Sao kê tài khoản',
+        to: '/futures',
+    },
+];
+const AVARTAR_LISTS = [
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Tổng quan',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Bảo mật',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Xác minh',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Phần thưởng',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Trung tâm nhiệm vụ',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+        title: 'Trung tâm phần thưởng',
+        to: '/futures',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faBriefcase} />,
+
+        title: 'Quản lí API',
+        to: '/futures',
+    },
+];
+
 //Modal
 
-function Header() {
-    const [openModal, setOpenModal] = useState<boolean>(false);
+function DefaultHeader() {
+    const [openModal, setOpenModal] = useState(false);
+    // Context
+    const {
+        authState: { isAuthenticated },
+    } = useContext(AuthContext);
+
+    let body;
+
+    if (isAuthenticated) {
+        return (body = (
+            <>
+                <Command items={WALLET_LISTS}>
+                    <div className={cx('content-item')}>
+                        ví
+                        <FontAwesomeIcon icon={faCaretUp} className={cx('content-icon-triangle')} />
+                    </div>
+                </Command>
+                <Command items={COMMAND_LISTS}>
+                    <div className={cx('content-item')}>
+                        Lệnh
+                        <FontAwesomeIcon icon={faCaretUp} className={cx('content-icon-triangle')} />
+                    </div>
+                </Command>
+                <Avartar items={AVARTAR_LISTS}>
+                    <img
+                        src="https://public.bnbstatic.com/image/common_notification/20211230/f6305dee-e00e-4bfe-9d13-3073ad8eb565.png"
+                        className={cx('img')}
+                        alt=""
+                    />
+                </Avartar>
+            </>
+        ));
+    } else {
+        body = (
+            <div>
+                <Button href="/login" className={cx('login-item')} htmlType="button">
+                    Đăng nhập
+                </Button>
+                <Button href="/register" className={cx('register-item')} htmlType="button">
+                    Đăng ký
+                </Button>
+            </div>
+        );
+    }
 
     return (
         <header className={cx('header')}>
@@ -346,16 +520,7 @@ function Header() {
                 </Link>
             </div>
             <div className={cx('space')}></div>
-
-            <div className={cx('login')}>
-                <Button href="/login" className={cx('login-item')} htmlType="button">
-                    Đăng nhập
-                </Button>
-                <Button href="/register" className={cx('register-item')} htmlType="button">
-                    Đăng ký
-                </Button>
-            </div>
-
+            <div className={cx('login')}>{body}</div>
             <div className={cx('tools')}>
                 <Download>
                     <div className={cx('content-item')}>Tải xuống</div>
@@ -387,4 +552,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default DefaultHeader;
